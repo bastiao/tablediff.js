@@ -17,6 +17,15 @@ the table.
 
 The colors that will be used to differenciate the perfect match, match or remove.
 
+# Dependences
+
+We've used the javascritpt available:
+http://ejohn.org/projects/javascript-diff-algorithm/
+
+They use the MIT license which does not have any compatibility issue with our library.
+
+Also, we've did some hacks on the library to make it works with our project.
+
 # License
 
     tablediff.js
