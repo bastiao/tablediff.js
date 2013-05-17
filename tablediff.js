@@ -62,7 +62,7 @@ tablediff = function(list_ids)
 
 	$("#content").append(table);
 	//$("#content").append(JsDiff.diffCss("test", "test"));
-	$("#content").append(diffString("test", "tesdasdast"));
+	$("#content").append(diffString("tesdasdasst", "tesdasdast"));
 
 
 };
