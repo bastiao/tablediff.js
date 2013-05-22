@@ -6,7 +6,14 @@ A javascript implementation to compare several sets of values. The idea of this 
 
     git clone git://github.com/bastiao/tablediff.js
 
+
+# State of the project
+
+current at developing
+
 # How to use?
+
+
 
 ## tabletags.js
 
