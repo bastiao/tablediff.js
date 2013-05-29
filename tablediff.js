@@ -63,9 +63,9 @@ tablediff = function(list_ids)
 
 };
 
-$(function(){
+/*$(function(){
    tablediff([1,2]);
-});
+});*/
 
 buildtable = function()
 {
