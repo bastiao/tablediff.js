@@ -19,7 +19,7 @@
  */
 
 /**
- * [ description]
+ * Compare each cell of the table 
  * @param  {[type]} table     [description]
  * @param  {[type]} cell_name [description]
  * @param  {[type]} value     [description]
@@ -80,7 +80,7 @@ compare_cell = function(table, cell_name, value)
 
 
 /**
- * [ description]
+ * Compare the table and change the colours according to the differencess
  * @param  {[type]} table1 [description]
  * @param  {[type]} table2 [description]
  * @return {[type]}        [description]
