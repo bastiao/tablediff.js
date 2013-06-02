@@ -18,7 +18,6 @@
 .
  */
 
-
 /**
  * [ description]
  * @param  {[type]} table     [description]
@@ -29,8 +28,8 @@
 compare_cell = function(table, cell_name, value)
 {	
 	var result_final = 0;
-	console.log("Cellname: " + cell_name.data);
-	console.log("Value: " + value.data);
+	//console.log("Cellname: " + cell_name.data);
+	//console.log("Value: " + value.data);
 	   $('#'+ table).each(function() {
 	  	//console.log($(this.childNodes[3].childNodes));
 	  	 $(this.childNodes[3].childNodes).each(function()
@@ -46,12 +45,12 @@ compare_cell = function(table, cell_name, value)
 		  				{
 		  				if ($(this.childNodes[1].childNodes[0]).context.data==cell_name.data)
 		  				{
-		  					console.log("FOUND: " + value.data);
-		  					console.log($(this.childNodes[3].childNodes[0])[0].textContent);
+		  					//console.log("FOUND: " + value.data);
+		  					//console.log($(this.childNodes[3].childNodes[0])[0].textContent);
 		  					//if (value.data.indexOf($(this.childNodes[3].childNodes[0]).context) !== -1))
 							if ($(this.childNodes[3].childNodes[0])[0].textContent.indexOf(value.data) !== -1)
 		  					{
-		  						console.log("True: " + value.data);
+		  						//console.log("True: " + value.data);
 		  						result_final = 1;
 		  						return false;
 		  					}
@@ -103,7 +102,7 @@ comparetable = function(table1, table2){
 		  				//console.log($(this.childNodes[3].childNodes[0]).context);
 		  				
 		  				var result = compare_cell(table2, $(this.childNodes[1].childNodes[0]).context,$(this.childNodes[3].childNodes[0]).context);
-		  				console.log('Result: ' + result );
+		  				//console.log('Result: ' + result );
 		  				if (result==1)
 		  					$(this).addClass("success");
 		  				else
@@ -119,7 +118,7 @@ comparetable = function(table1, table2){
 
   	$('td').each(function()
   	{
-  		console.log("das");
+  		
   	}
 
   		);
@@ -169,7 +168,7 @@ cleantablediff = function(list_tables)
 {
 	$(list_tables).each(function(table_tmp)
 	{
-
+		console.log(list_tables[table_tmp]);
 		$('#'+ list_tables[table_tmp]).each(function() 
 		{
 	  	//console.log($(this.childNodes[3].childNodes));
@@ -180,6 +179,7 @@ cleantablediff = function(list_tables)
 		  	{	
 		  			if (this.tagName=="TR")
 		  			{
+		  				console.log(this);
 		  				$(this).removeClass("success");
 	  					$(this).removeClass("error");
 		  			}
