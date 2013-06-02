@@ -108,6 +108,9 @@
       </tbody>
     </table>
 
+
+    <button type="button" class="btn btn-primary" onclick="cleantablediff(['table1', 'table2', 'table3']); return false;">Clean</button>
+
   </div>
 
 </body>
@@ -123,13 +126,14 @@
 $(function()
 {
    tablediffall("table1", ["table2", "table3"]);
+   cleantablediff(["table1", "table2", "table3"]);
 });
-
 
 $(function()
 {
-    cleantablediff(["table1", "table3", "table1"]);
-   tablediffall("table2", ["table1", "table3"]);
+    cleantablediff(['table1', 'table2', 'table3']); 
+    return false;
+   //tablediffall("table2", ["table1", "table3"]);
 });
 
 
