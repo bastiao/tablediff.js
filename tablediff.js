@@ -149,11 +149,9 @@ comparetable = function(table1, table2){
  */
 tablediffall = function(table_base, list_tables)
 {
-	console.log(list_tables);
 	$(list_tables).each(function(table_tmp)
 	{
-		comparetable(list_tables[table_tmp],table_base);
-		console.log(table_tmp);
+		comparetable(list_tables[table_tmp],table_base);		
 	});	
 	
 };
