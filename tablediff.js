@@ -19,6 +19,13 @@
  */
 
 
+/**
+ * [ description]
+ * @param  {[type]} table     [description]
+ * @param  {[type]} cell_name [description]
+ * @param  {[type]} value     [description]
+ * @return {[type]}           [description]
+ */
 compare_cell = function(table, cell_name, value)
 {	
 	var result_final = 0;
@@ -72,6 +79,13 @@ compare_cell = function(table, cell_name, value)
 	  return result_final;
 }
 
+
+/**
+ * [ description]
+ * @param  {[type]} table1 [description]
+ * @param  {[type]} table2 [description]
+ * @return {[type]}        [description]
+ */
 comparetable = function(table1, table2){
 	// Compare two tables: highlight the differences
 	$(function() {
@@ -128,6 +142,12 @@ comparetable = function(table1, table2){
 };
 
 
+/**
+ * [ description]
+ * @param  {[type]} table_base  [description]
+ * @param  {[type]} list_tables [description]
+ * @return {[type]}             [description]
+ */
 tablediffall = function(table_base, list_tables)
 {
 	console.log(list_tables);
@@ -140,6 +160,11 @@ tablediffall = function(table_base, list_tables)
 };
 
 
+/**
+ * Clean the formats of a table
+ * @param  {[string]} list_tables List of tables
+ * @return {[None]}             None
+ */
 cleantablediff = function(list_tables)
 {
 	$(list_tables).each(function(table_tmp)
