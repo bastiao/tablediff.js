@@ -125,13 +125,44 @@ comparetable = function(table1, table2){
 	  
 	});
 
+};
 
 
-}
-
-compareline = function ()
+tablediffall = function(table_base, list_tables)
 {
+	console.log(list_tables);
+	$(list_tables).each(function(table_tmp)
+	{
+		comparetable(list_tables[table_tmp],table_base);
+		console.log(table_tmp);
+	});	
+	
+};
 
-}
 
+cleantablediff = function(list_tables)
+{
+	$(list_tables).each(function(table_tmp)
+	{
 
+		$('#'+ list_tables[table_tmp]).each(function() 
+		{
+	  	//console.log($(this.childNodes[3].childNodes));
+	  	$(this.childNodes[3].childNodes).each(function()
+	  	{
+	  		//console.log($(this.childNodes));
+			$(this).each(function()
+		  	{	
+		  			if (this.tagName=="TR")
+		  			{
+		  				$(this).removeClass("success");
+	  					$(this).removeClass("error");
+		  			}
+		  	});		
+	  		
+	  	});
+
+	});
+	});
+
+};
