@@ -120,13 +120,27 @@
   <script src="../tablediff.js" type="text/javascript"></script>
   <script>
 
+$(function()
+{
+   tablediffall("table1", ["table2", "table3"]);
+});
+
+
+$(function()
+{
+    cleantablediff(["table1", "table3", "table1"]);
+   tablediffall("table2", ["table1", "table3"]);
+});
+
+
+/*
 $(function(){
    comparetable("table2","table1");
 });
 
 $(function(){
    comparetable("table3","table1");
-});
+});*/
 
 
 
