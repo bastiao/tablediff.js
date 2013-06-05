@@ -92,7 +92,7 @@ comparetable = function(table1, table2){
 	  $('#'+ table1).each(function() {
 	  	//console.log($(this.childNodes[3].childNodes));
 	  	$(this.childNodes[3].childNodes).each(function()
-	  	{
+	  	{	
 	  		//console.log($(this.childNodes));
 			$(this).each(function()
 		  	{	
