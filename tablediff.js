@@ -191,10 +191,65 @@ cleantablediff = function(list_tables)
 	  					$(this).removeClass("error");
 		  			}
 		  	});		
-	  		
 	  	});
 
 	});
 	});
 
 };
+
+function show_hide_match(list_tables, show)
+{
+
+	$(list_tables).each(function(table_tmp)
+	{
+		
+		if (show)
+		{
+			$('#' + list_tables[table_tmp] + ' .success').show();	
+		}
+		else
+		{
+			$('#' + list_tables[table_tmp] + ' .success').hide();	
+		}
+		
+	});
+};
+
+function show_hide_unmatch(list_tables, show)
+{
+	$(list_tables).each(function(table_tmp)
+	{
+
+		if (show)
+		{
+			$('#' + list_tables[table_tmp] + ' .error').show();	
+		}
+		else
+		{
+			$('#' + list_tables[table_tmp] + ' .error').hide();	
+		}
+	});
+};
+
+function show_hide_proximity(list_tables, show)
+{
+	$(list_tables).each(function(table_tmp)
+	{
+		if (show)
+		{
+			$('#' + list_tables[table_tmp] + ' .warning').show();	
+		}
+		else
+		{
+			$('#' + list_tables[table_tmp] + ' .warning').hide();	
+		}
+		
+	});
+};
+
+
+
+
+
+
