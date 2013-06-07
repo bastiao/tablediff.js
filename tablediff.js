@@ -45,9 +45,9 @@ compare_cell = function(table, cell_name, value)
 		  				{
 		  				if ($(this.childNodes[1].childNodes[0]).context.data==cell_name.data)
 		  				{
-		  					console.log("FOUND: " + value.data);
-		  					console.log($(this.childNodes[3].childNodes[0])[0].textContent);
-		  					console.log($(this.childNodes[3].childNodes[0])[0].textContent.indexOf(value.data));
+		  					//console.log("FOUND: " + value.data);
+		  					//console.log($(this.childNodes[3].childNodes[0])[0].textContent);
+		  					//console.log($(this.childNodes[3].childNodes[0])[0].textContent.indexOf(value.data));
 		  					//if (value.data.indexOf($(this.childNodes[3].childNodes[0]).context) !== -1))
 							if ($(this.childNodes[3].childNodes[0])[0].textContent.indexOf(value.data) !== -1 && $(this.childNodes[3].childNodes[0])[0].textContent === value.data)
 		  					{
@@ -109,7 +109,7 @@ comparetable = function(table1, table2){
 		  				//console.log($(this.childNodes[3].childNodes[0]).context);
 		  				
 		  				var result = compare_cell(table2, $(this.childNodes[1].childNodes[0]).context,$(this.childNodes[3].childNodes[0]).context);
-		  				console.log('Result: ' + result );
+		  				//console.log('Result: ' + result );
 		  				if (result==1)
 		  					$(this).addClass("success");
 		  				else if (result==2)
@@ -175,7 +175,7 @@ cleantablediff = function(list_tables)
 {
 	$(list_tables).each(function(table_tmp)
 	{
-		console.log(list_tables[table_tmp]);
+		//console.log(list_tables[table_tmp]);
 		$('#'+ list_tables[table_tmp]).each(function() 
 		{
 	  	//console.log($(this.childNodes[3].childNodes));
@@ -203,7 +203,7 @@ function show_hide_match(list_tables, show)
 
 	$(list_tables).each(function(table_tmp)
 	{
-		
+
 		if (show)
 		{
 			$('#' + list_tables[table_tmp] + ' .success').show();	
@@ -220,7 +220,6 @@ function show_hide_unmatch(list_tables, show)
 {
 	$(list_tables).each(function(table_tmp)
 	{
-
 		if (show)
 		{
 			$('#' + list_tables[table_tmp] + ' .error').show();	
@@ -244,12 +243,33 @@ function show_hide_proximity(list_tables, show)
 		{
 			$('#' + list_tables[table_tmp] + ' .warning').hide();	
 		}
-		
 	});
 };
 
-
-
+function show_hide_empty_rows(list_tables, show)
+{
+	$(list_tables).each(function(table_tmp)
+	{
+		console.log(list_tables[table_tmp]);
+		$("#" + list_tables[table_tmp]+" tr").each(function() {        
+		    var cell = $.trim($($(this).find('td')[1]).text());
+		    console.log(cell);
+		    if (cell.length == 0){
+		        //console.log('empty');
+		        //$(this).addClass('nodisplay');
+		        if (show)
+		        {
+		        	$(this).closest('tr').show();
+		        }
+		        else
+		        {
+		        	$(this).closest('tr').hide();	
+		        }
+		        
+		    }                   
+		});
+	});
+};
 
 
 
