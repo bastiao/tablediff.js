@@ -23,7 +23,7 @@
  * @param  {[type]} table     [description]
  * @param  {[type]} cell_name [description]
  * @param  {[type]} value     [description]
- * @return {[type]}           [description]
+ * @return {[type]}           1 = 
  */
 compare_cell = function(table, cell_name, value)
 {	
@@ -45,14 +45,21 @@ compare_cell = function(table, cell_name, value)
 		  				{
 		  				if ($(this.childNodes[1].childNodes[0]).context.data==cell_name.data)
 		  				{
-		  					//console.log("FOUND: " + value.data);
-		  					//console.log($(this.childNodes[3].childNodes[0])[0].textContent);
+		  					console.log("FOUND: " + value.data);
+		  					console.log($(this.childNodes[3].childNodes[0])[0].textContent);
+		  					console.log($(this.childNodes[3].childNodes[0])[0].textContent.indexOf(value.data));
 		  					//if (value.data.indexOf($(this.childNodes[3].childNodes[0]).context) !== -1))
-							if ($(this.childNodes[3].childNodes[0])[0].textContent.indexOf(value.data) !== -1)
+							if ($(this.childNodes[3].childNodes[0])[0].textContent.indexOf(value.data) !== -1 && $(this.childNodes[3].childNodes[0])[0].textContent === value.data)
 		  					{
 		  						//console.log("True: " + value.data);
 		  						result_final = 1;
 		  						return false;
+		  					}
+		  					else if ($(this.childNodes[3].childNodes[0])[0].textContent.indexOf(value.data) >= 0 && $(this.childNodes[3].childNodes[0])[0].textContent !== value.data)
+		  					{
+
+		  						result_final = 2;
+		  						return result_final;
 		  					}
 		  					$(this.childNodes[1]).addClass("success");
 		  					$(this.childNodes[1]).add("found");
@@ -102,9 +109,11 @@ comparetable = function(table1, table2){
 		  				//console.log($(this.childNodes[3].childNodes[0]).context);
 		  				
 		  				var result = compare_cell(table2, $(this.childNodes[1].childNodes[0]).context,$(this.childNodes[3].childNodes[0]).context);
-		  				//console.log('Result: ' + result );
+		  				console.log('Result: ' + result );
 		  				if (result==1)
 		  					$(this).addClass("success");
+		  				else if (result==2)
+		  					$(this).addClass("warning");
 		  				else
 		  					$(this).addClass("error");
 		  				//console.log($(this));	
